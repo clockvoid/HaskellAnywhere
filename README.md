@@ -9,7 +9,9 @@ haskell interpretor powered by http://rextester.com
 そのうち，このプログラム単体でデバッグもできるようになったらすごいですね（他人事）
 
 ## Installation
-Javaがインストールされた環境でコンパイルして，カレントディレクトリに入り，`java Main`してください
+動作にはApache Http ClientにClass Pathが通った環境が必要です．
+
+上記のことを確認した上で，コンパイルして，カレントディレクトリに入り，`java Main`してください
 
 ## Environment
 開発はOracle jdk1.8.0_111で行っております．
