@@ -15,9 +15,6 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
 import Json.CommunicationResult;
-import Json.ExceptionResult;
-import Json.HaskellResult;
-import Json.HttpErrorResult;
 
 public class RegexTester {
 	
@@ -45,12 +42,12 @@ public class RegexTester {
 			CloseableHttpResponse response = httpClient.execute(postMethod);
 			if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
 				HttpEntity entity = response.getEntity();
-				result = new HaskellResult(EntityUtils.toString(entity, StandardCharsets.UTF_8));
+				result = ResultFactory.createHaskellResult(EntityUtils.toString(entity, StandardCharsets.UTF_8));
 			} else {
-				result = new HttpErrorResult("{\"HttpStatusCode\":\"" + Integer.toString(response.getStatusLine().getStatusCode()) + "\"}");
+				result = ResultFactory.createHttpErrorResult("{\"HttpStatusCode\":\"" + Integer.toString(response.getStatusLine().getStatusCode()) + "\"}");
 			}
 		} catch (IOException e) {
-			result = new ExceptionResult("{\"Exception\":\"" + e.getMessage() + "\"}");
+			result = ResultFactory.createExceptionResult("{\"Exception\":\"" + e.getMessage() + "\"}");
 		}
 		
 		return result;

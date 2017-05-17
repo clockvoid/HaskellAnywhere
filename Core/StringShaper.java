@@ -1,6 +1,5 @@
 package Core;
 
-import Json.AddDefineResult;
 import Json.CommunicationResult;
 
 public class StringShaper {
@@ -25,7 +24,7 @@ public class StringShaper {
 			result = submit();
 		} else {
 			program += analyzer.getText() + "\n";
-			result = new AddDefineResult("{\"AddedDefine\":\"" + analyzer.getText() + "\"}");
+			result = ResultFactory.createAddDefineResult("{\"AddedDefine\":\"" + analyzer.getText() + "\"}");
 		}
 		return result;
 	}
