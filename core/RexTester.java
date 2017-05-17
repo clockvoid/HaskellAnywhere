@@ -1,4 +1,4 @@
-package Core;
+package core;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -14,15 +14,15 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
-import Json.CommunicationResult;
+import result.CommunicationResult;
 
-public class RegexTester {
+public class RexTester {
 	
 	private CloseableHttpClient httpClient;
 	private String url = "http://rextester.com/rundotnet/api";
 	private HttpPost postMethod;
 	
-	public RegexTester() {
+	public RexTester() {
 		this.httpClient = HttpClients.createDefault();
 		this.postMethod = new HttpPost(url);
 		postMethod.addHeader("Access-Control-Allow-Origin", "http://rextester.com");

@@ -4,14 +4,14 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import Core.StringShaper;
-import Json.CommunicationResult;
+import core.HaskellAnywhere;
+import result.CommunicationResult;
 
 public class StringShaperTest {
 
 	@Test
 	public void test() {
-		StringShaper shaper = new StringShaper();
+		HaskellAnywhere shaper = new HaskellAnywhere();
 		CommunicationResult result = shaper.input("\"Hello, world\"");
 		
 		assertEquals(result.getMessage(), "\\\"Hello, world\\\"\\n");

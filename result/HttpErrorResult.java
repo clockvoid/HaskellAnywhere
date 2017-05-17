@@ -1,4 +1,4 @@
-package Json;
+package result;
 
 public class HttpErrorResult extends AbstructResult {
 	

@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import Core.StringAnalyzer;
+import core.StringAnalyzer;
 
 public class StringAnalyzerTest {
 

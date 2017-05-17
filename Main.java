@@ -3,7 +3,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import Core.*;
+import core.*;
 
 public class Main {
 
@@ -17,7 +17,7 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		StringShaper shaper = new StringShaper();
+		HaskellAnywhere shaper = new HaskellAnywhere();
 		
 		String inputBuffere;
 		while (true) {

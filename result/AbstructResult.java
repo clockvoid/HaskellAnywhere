@@ -1,7 +1,10 @@
-package Json;
+package result;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public abstract class AbstructResult implements CommunicationResult {
 	
@@ -9,7 +12,7 @@ public abstract class AbstructResult implements CommunicationResult {
 	protected Map<String, String> jsonMap;
 	
 	public AbstructResult(String arg0) {
-		this.json = arg0.replaceAll("[{}]", "");
+		this.json = arg0;
 		this.jsonMap = this.analyze(this.json);
 	}
 
@@ -29,11 +32,21 @@ public abstract class AbstructResult implements CommunicationResult {
 	public Map<String, String> analyze(String arg0) {
 		// TODO Auto-generated method stubString tmpJson = arg0;
 		String tmpJson = arg0;
-		String[] stringList = tmpJson.split("(\")?,\"");
 		Map<String, String> tmpMap = new HashMap<String, String>();
-		for (String str : stringList) {
-			tmpMap.put(str.split("\":(\")?")[0].replaceAll("^\\\"", ""), str.split("\":(\")?")[1].replaceAll("^\\\"", ""));
+		try {
+			JSONObject object = new JSONObject(tmpJson);
+			Iterator<String> keysItr = object.keys();
+			while (keysItr.hasNext()) {
+				String key = keysItr.next();
+				Object value = object.get(key); //don't input double hierarchy json...
+				
+				tmpMap.put(key, value == JSONObject.NULL ? "null" : value.toString()); //refer to twitter4j's JSONObject
+			}
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+
 		return tmpMap;
 	}
 

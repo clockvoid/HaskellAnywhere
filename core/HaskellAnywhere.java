@@ -1,18 +1,18 @@
-package Core;
+package core;
 
-import Json.CommunicationResult;
+import result.CommunicationResult;
 
-public class StringShaper {
+public class HaskellAnywhere {
 	
 	private String program;
 	private String mainFunction;
 	private final String defaultMainFunction = "main = print $ ";
-	private RegexTester compiler;
+	private RexTester compiler;
 	
-	public StringShaper() {
+	public HaskellAnywhere() {
 		this.program = "";
 		this.mainFunction = "";
-		this.compiler = new RegexTester();
+		this.compiler = new RexTester();
 	}
 	
 	public CommunicationResult input(String arg0) {

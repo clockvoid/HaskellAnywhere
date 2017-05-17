@@ -6,14 +6,14 @@ import static org.hamcrest.CoreMatchers.containsString;
 
 import org.junit.Test;
 
-import Core.RegexTester;
-import Json.CommunicationResult;
+import core.RexTester;
+import result.CommunicationResult;
 
 public class RegexTesterTest {
 
 	@Test
 	public void test() {
-		RegexTester tester = new RegexTester();
+		RexTester tester = new RexTester();
 		
 		CommunicationResult result = tester.post("main = print \"Hello world\"", "");
 			

@@ -1,4 +1,4 @@
-package Json;
+package result;
 
 import java.util.Map;
 

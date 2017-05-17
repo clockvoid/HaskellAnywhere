@@ -1,10 +1,10 @@
-package Core;
+package core;
 
-import Json.AddDefineResult;
-import Json.CommunicationResult;
-import Json.ExceptionResult;
-import Json.HaskellResult;
-import Json.HttpErrorResult;
+import result.AddDefineResult;
+import result.CommunicationResult;
+import result.ExceptionResult;
+import result.HaskellResult;
+import result.HttpErrorResult;
 
 public class ResultFactory {
 	
