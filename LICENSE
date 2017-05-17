@@ -225,3 +225,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+HaskellAnywhere includes software from Apache HttpComponents to communicate http servers.
+You can check lisence for Apache HttpComponents https://hc.apache.org/httpcomponents-core-ga/license.html.
