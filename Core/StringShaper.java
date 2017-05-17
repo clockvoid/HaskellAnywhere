@@ -1,5 +1,8 @@
 package Core;
 
+import Json.AddDefineResult;
+import Json.CommunicationResult;
+
 public class StringShaper {
 	
 	private String program;
@@ -13,21 +16,21 @@ public class StringShaper {
 		this.compiler = new RegexTester();
 	}
 	
-	public String input(String arg0) {
-		String result = "";
+	public CommunicationResult input(String arg0) {
+		CommunicationResult result;
 		StringAnalyzer analyzer = new StringAnalyzer(arg0);
 		if (analyzer.isMain()) {
 			mainFunction = this.defaultMainFunction;
 			mainFunction += analyzer.getText();
-			result = new JsonAnalyzer(submit()).analyze().get("Result");
+			result = submit();
 		} else {
 			program += analyzer.getText() + "\n";
-			result = "added define: " + analyzer.getText();
+			result = new AddDefineResult("{\"AddedDefine\":\"" + analyzer.getText() + "\"}");
 		}
 		return result;
 	}
 	
-	public String submit() {
+	public CommunicationResult submit() {
 		return this.compiler.post(program + mainFunction, "");
 	}
 	

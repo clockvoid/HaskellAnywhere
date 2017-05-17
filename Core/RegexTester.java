@@ -14,6 +14,11 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
+import Json.CommunicationResult;
+import Json.ExceptionResult;
+import Json.HaskellResult;
+import Json.HttpErrorResult;
+
 public class RegexTester {
 	
 	private CloseableHttpClient httpClient;
@@ -26,8 +31,8 @@ public class RegexTester {
 		postMethod.addHeader("Access-Control-Allow-Origin", "http://rextester.com");
 	}
 	
-	public String post(String arg0, String arg1) {
-		String result = "";
+	public CommunicationResult post(String arg0, String arg1) {
+		CommunicationResult result;
 		
 		List<BasicNameValuePair> params = new ArrayList<BasicNameValuePair>();
 		params.add(new BasicNameValuePair("LanguageChoice", "11"));
@@ -40,10 +45,12 @@ public class RegexTester {
 			CloseableHttpResponse response = httpClient.execute(postMethod);
 			if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
 				HttpEntity entity = response.getEntity();
-				result = EntityUtils.toString(entity, StandardCharsets.UTF_8);
+				result = new HaskellResult(EntityUtils.toString(entity, StandardCharsets.UTF_8));
+			} else {
+				result = new HttpErrorResult("{\"HttpStatusCode\":\"" + Integer.toString(response.getStatusLine().getStatusCode()) + "\"}");
 			}
 		} catch (IOException e) {
-			result = e.getMessage();
+			result = new ExceptionResult("{\"Exception\":\"" + e.getMessage() + "\"}");
 		}
 		
 		return result;

@@ -7,6 +7,7 @@ import static org.hamcrest.CoreMatchers.containsString;
 import org.junit.Test;
 
 import Core.RegexTester;
+import Json.CommunicationResult;
 
 public class RegexTesterTest {
 
@@ -14,14 +15,9 @@ public class RegexTesterTest {
 	public void test() {
 		RegexTester tester = new RegexTester();
 		
-		String[] results = tester.post("main = print \"Hello world\"", "").split(",");
+		CommunicationResult result = tester.post("main = print \"Hello world\"", "");
 			
-		for (String result : results) {
-			if (result.contains("Result")) {
-				String mainContent = result.split(":")[1];
-				assertThat(mainContent, containsString("Hello world"));
-			}
-		}
+		assertThat(result.getMessage(), containsString("Hello world"));
 			
 	}
 

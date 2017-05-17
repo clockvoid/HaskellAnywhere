@@ -26,7 +26,7 @@ public class Main {
 				if (inputBuffere.equals("quit")) {
 					break;
 				} else {
-					System.out.println(shaper.input(inputBuffere));
+					System.out.println(shaper.input(inputBuffere).getMessage());
 				}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
