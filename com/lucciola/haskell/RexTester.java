@@ -1,6 +1,5 @@
-package core;
+package com.lucciola.haskell;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +13,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
-import result.CommunicationResult;
+import com.lucciola.result.CommunicationResult;
 
 public class RexTester {
 	
@@ -42,7 +41,7 @@ public class RexTester {
 			CloseableHttpResponse response = httpClient.execute(postMethod);
 			if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
 				HttpEntity entity = response.getEntity();
-				result = ResultFactory.createHaskellResult(EntityUtils.toString(entity, StandardCharsets.UTF_8));
+				result = ResultFactory.createHaskellResult(EntityUtils.toString(entity, "UTF-8"));
 			} else {
 				result = ResultFactory.createHttpErrorResult("{\"HttpStatusCode\":\"" + Integer.toString(response.getStatusLine().getStatusCode()) + "\"}");
 			}

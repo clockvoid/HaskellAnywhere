@@ -1,11 +1,11 @@
-package Test;
+package test;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import result.CommunicationResult;
-import result.HaskellResult;
+import com.lucciola.result.CommunicationResult;
+import com.lucciola.result.HaskellResult;
 
 public class HaskellResultTest {
 

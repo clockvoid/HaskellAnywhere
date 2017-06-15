@@ -1,10 +1,10 @@
-package Test;
+package test;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import core.StringAnalyzer;
+import com.lucciola.haskell.StringAnalyzer;
 
 public class StringAnalyzerTest {
 

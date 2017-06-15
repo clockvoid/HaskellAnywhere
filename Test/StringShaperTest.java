@@ -1,11 +1,11 @@
-package Test;
+package test;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import core.HaskellAnywhere;
-import result.CommunicationResult;
+import com.lucciola.haskell.HaskellAnywhere;
+import com.lucciola.result.CommunicationResult;
 
 public class StringShaperTest {
 

@@ -265,7 +265,7 @@ public class JSONObject {
      * first character is converted to lower case.
      *
      * For example, if an object has a method named <code>"getName"</code>, and
-     * if the result of calling <code>object.getName()</code> is
+     * if the com.lucciola.result of calling <code>object.getName()</code> is
      * <code>"Larry Fine"</code>, then the JSONObject will contain
      * <code>"name": "Larry Fine"</code>.
      *
@@ -370,9 +370,9 @@ public class JSONObject {
      * is already a JSONArray, then the new value is appended to it. In
      * contrast, the put method replaces the previous value.
      *
-     * If only one value is accumulated that is not a JSONArray, then the result
+     * If only one value is accumulated that is not a JSONArray, then the com.lucciola.result
      * will be the same as using put. But if multiple values are accumulated,
-     * then the result will be like append.
+     * then the com.lucciola.result will be like append.
      *
      * @param key
      *            A key string.
@@ -1627,7 +1627,7 @@ public class JSONObject {
      *
      * @param names
      *            A JSONArray containing a list of key strings. This determines
-     *            the sequence of the values in the result.
+     *            the sequence of the values in the com.lucciola.result.
      * @return A JSONArray of values.
      * @throws JSONException
      *             If any of the values are non-finite numbers.
@@ -1645,7 +1645,7 @@ public class JSONObject {
 
     /**
      * Make a JSON text of this JSONObject. For compactness, no whitespace is
-     * added. If this would not result in a syntactically correct JSON text,
+     * added. If this would not com.lucciola.result in a syntactically correct JSON text,
      * then null will be returned instead.
      * <p>
      * Warning: This method assumes that the data structure is acyclical.
@@ -1695,7 +1695,7 @@ public class JSONObject {
      * toJSONString method will be called. If the value is a MAP, then a
      * JSONObject will be made from it and its toJSONString method will be
      * called. Otherwise, the value's toString method will be called, and the
-     * result will be quoted.
+     * com.lucciola.result will be quoted.
      *
      * <p>
      * Warning: This method assumes that the data structure is acyclical.

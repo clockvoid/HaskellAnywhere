@@ -294,7 +294,7 @@ public class XMLTokener extends JSONTokener {
 
     /**
      * Skip characters until past the requested string.
-     * If it is not found, we are left at the end of the source with a result of false.
+     * If it is not found, we are left at the end of the source with a com.lucciola.result of false.
      * @param to A string to skip past.
      * @throws JSONException
      */

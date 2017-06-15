@@ -1,4 +1,4 @@
-package result;
+package com.lucciola.result;
 
 public class AddDefineResult extends AbstructResult {
 	

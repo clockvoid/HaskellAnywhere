@@ -1,6 +1,6 @@
-package core;
+package com.lucciola.haskell;
 
-import result.CommunicationResult;
+import com.lucciola.result.CommunicationResult;
 
 public class HaskellAnywhere {
 	
@@ -40,4 +40,5 @@ public class HaskellAnywhere {
 	public String getMainFunction() {
 		return this.mainFunction;
 	}
+
 }

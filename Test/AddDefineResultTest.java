@@ -1,11 +1,11 @@
-package Test;
+package test;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import result.AddDefineResult;
-import result.CommunicationResult;
+import com.lucciola.result.AddDefineResult;
+import com.lucciola.result.CommunicationResult;
 
 public class AddDefineResultTest {
 

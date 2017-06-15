@@ -119,7 +119,7 @@ public class HTTP {
      *    "Reason-Phrase": "OK" (for example)
      * }</pre>
      * Any other members of the JSONObject will be output as HTTP fields.
-     * The result will end with two CRLF pairs.
+     * The com.lucciola.result will end with two CRLF pairs.
      * @param jo A JSONObject
      * @return An HTTP header string.
      * @throws JSONException if the object does not contain enough

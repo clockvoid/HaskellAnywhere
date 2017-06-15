@@ -177,7 +177,7 @@ public class JSONPointer {
      * returned value will be {@code document} itself. 
      * 
      * @param document the JSON document which should be the subject of querying.
-     * @return the result of the evaluation
+     * @return the com.lucciola.result of the evaluation
      * @throws JSONPointerException if an error occurs during evaluation
      */
     public Object queryFrom(Object document) {

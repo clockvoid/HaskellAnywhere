@@ -1,10 +1,10 @@
-package core;
+package com.lucciola.haskell;
 
-import result.AddDefineResult;
-import result.CommunicationResult;
-import result.ExceptionResult;
-import result.HaskellResult;
-import result.HttpErrorResult;
+import com.lucciola.result.AddDefineResult;
+import com.lucciola.result.CommunicationResult;
+import com.lucciola.result.ExceptionResult;
+import com.lucciola.result.HaskellResult;
+import com.lucciola.result.HttpErrorResult;
 
 public class ResultFactory {
 	

@@ -1,4 +1,4 @@
-package result;
+package com.lucciola.result;
 
 import java.util.Map;
 

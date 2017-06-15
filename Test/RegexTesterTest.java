@@ -1,4 +1,4 @@
-package Test;
+package test;
 
 import static org.junit.Assert.*;
 
@@ -6,8 +6,8 @@ import static org.hamcrest.CoreMatchers.containsString;
 
 import org.junit.Test;
 
-import core.RexTester;
-import result.CommunicationResult;
+import com.lucciola.haskell.RexTester;
+import com.lucciola.result.CommunicationResult;
 
 public class RegexTesterTest {
 

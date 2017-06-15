@@ -42,7 +42,7 @@ public class Cookie {
      * encoded values. We encode '=' and ';' because we must. We encode '%' and
      * '+' because they are meta characters in URL encoding.
      * @param string The source string.
-     * @return       The escaped result.
+     * @return       The escaped com.lucciola.result.
      */
     public static String escape(String string) {
         char            c;

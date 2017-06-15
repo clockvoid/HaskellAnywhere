@@ -5,7 +5,7 @@ package org.json;
  * <code>JSONObject.toString()</code>, <code>JSONArray.toString()</code>,
  * and <code>JSONWriter.value(</code>Object<code>)</code>. The
  * <code>toJSONString</code> method will be used instead of the default behavior
- * of using the Object's <code>toString()</code> method and quoting the result.
+ * of using the Object's <code>toString()</code> method and quoting the com.lucciola.result.
  */
 public interface JSONString {
     /**
