@@ -1,0 +1,7 @@
+bin
+httpcomponents-client-4.5.3
+META-INF
+java-json.jar
+.project
+.classpath
+.settings
