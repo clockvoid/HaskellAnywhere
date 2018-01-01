@@ -4,12 +4,10 @@ import java.util.HashMap
 import org.json.JSONException
 import org.json.JSONObject
 
-abstract class AbstructResult(arg0: String) : CommunicationResult {
+abstract class AbstractResult(arg0: String) : CommunicationResult {
 
-    // TODO Auto-generated method stub
     override var json: String = arg0
         protected set
-    // TODO Auto-generated method stub
     override var jsonMap: Map<String, String> = this.analyze(this.json)
         protected set
 
@@ -43,16 +41,13 @@ abstract class AbstructResult(arg0: String) : CommunicationResult {
             return result ?: ""
         }
 
-    override// TODO Auto-generated method stub
-    val addedDefine: String
+    override val addedDefine: String
         get() {
             val result = this.jsonMap["AddedDefine"]
             return result ?: ""
         }
 
-
-    override// TODO Auto-generated method stub
-    val exception: String
+    override val exception: String
         get() {
             val result = this.jsonMap["Exception"]
             return result ?: ""
@@ -65,7 +60,6 @@ abstract class AbstructResult(arg0: String) : CommunicationResult {
         }
 
     override fun analyze(arg0: String): Map<String, String> {
-        // TODO Auto-generated method stubString tmpJson = arg0;
         val tmpMap = HashMap<String, String>()
         try {
             val `object` = JSONObject(arg0)
@@ -77,7 +71,6 @@ abstract class AbstructResult(arg0: String) : CommunicationResult {
                 tmpMap.put(key, if (value === JSONObject.NULL) "null" else value.toString()) //refer to twitter4j's JSONObject
             }
         } catch (e: JSONException) {
-            // TODO Auto-generated catch block
             e.printStackTrace()
         }
 

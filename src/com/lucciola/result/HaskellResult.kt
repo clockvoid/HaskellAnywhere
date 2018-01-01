@@ -1,22 +1,17 @@
 package com.lucciola.result
 
-class HaskellResult(arg0: String) : AbstructResult(arg0) {
+class HaskellResult(arg0: String) : AbstractResult(arg0) {
 
     override val httpStatusCode: String
         get() = "200"
 
-    override// TODO Auto-generated method stub
-    val message: String
+    override val message: String
         get() {
-            var result = ""
-            if (this.warnings == "null" && this.errors == "null") {
-                result = this.result
-            } else if (this.warnings == "null") {
-                result = this.errors
-            } else {
-                result = this.warnings
+            when {
+                this.warnings == "null" && this.errors == "null" -> return this.result
+                this.warnings == "null" -> return this.errors
+                else -> return this.warnings
             }
-            return result
         }
 
 }

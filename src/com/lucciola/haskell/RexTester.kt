@@ -3,10 +3,8 @@ package com.lucciola.haskell
 import java.io.IOException
 import java.util.ArrayList
 
-import org.apache.http.HttpEntity
 import org.apache.http.HttpStatus
 import org.apache.http.client.entity.UrlEncodedFormEntity
-import org.apache.http.client.methods.CloseableHttpResponse
 import org.apache.http.client.methods.HttpPost
 import org.apache.http.impl.client.CloseableHttpClient
 import org.apache.http.impl.client.HttpClients
@@ -17,13 +15,11 @@ import com.lucciola.result.CommunicationResult
 
 class RexTester {
 
-    private val httpClient: CloseableHttpClient
+    private val httpClient: CloseableHttpClient = HttpClients.createDefault()
     private val url = "http://rextester.com/rundotnet/api"
-    private val postMethod: HttpPost
+    private val postMethod: HttpPost = HttpPost(this.url)
 
     init {
-        this.httpClient = HttpClients.createDefault()
-        this.postMethod = HttpPost(url)
         postMethod.addHeader("Access-Control-Allow-Origin", "http://rextester.com")
     }
 

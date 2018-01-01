@@ -4,19 +4,13 @@ import com.lucciola.result.CommunicationResult
 
 class Haskell {
 
-    private val compiler: RexTester
-    private var program: String? = null
-    private var input: String? = null
-
-    init {
-        this.compiler = RexTester()
-        this.program = ""
-        this.input = ""
-    }
+    private val compiler: RexTester = RexTester()
+    private var program: String = ""
+    private var input: String = ""
 
     fun run(): CommunicationResult {
         // in Kotlin, to generate between non-null type and nullable type, using !! operator
-        return this.compiler.post(this.program!!, this.input!!)
+        return this.compiler.post(this.program, this.input)
     }
 
     fun setProgram(arg0: String?) {

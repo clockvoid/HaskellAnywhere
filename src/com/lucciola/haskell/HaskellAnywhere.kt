@@ -4,18 +4,12 @@ import com.lucciola.result.CommunicationResult
 
 class HaskellAnywhere {
 
-    var program: String? = null
+    var program: String = ""
         private set
-    var mainFunction: String? = null
+    var mainFunction: String = ""
         private set
     private val defaultMainFunction = "main = print $ "
-    private val compiler: RexTester
-
-    init {
-        this.program = ""
-        this.mainFunction = ""
-        this.compiler = RexTester()
-    }
+    private val compiler: RexTester = RexTester()
 
     fun input(arg0: String): CommunicationResult {
         val result: CommunicationResult
@@ -32,7 +26,7 @@ class HaskellAnywhere {
     }
 
     fun submit(): CommunicationResult {
-        return this.compiler.post(program!! + mainFunction!!, "")
+        return this.compiler.post(program + mainFunction, "")
     }
 
 }

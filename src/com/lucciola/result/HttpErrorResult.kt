@@ -1,9 +1,8 @@
 package com.lucciola.result
 
-class HttpErrorResult(arg0: String) : AbstructResult(arg0) {
+class HttpErrorResult(arg0: String) : AbstractResult(arg0) {
 
-    override// TODO Auto-generated method stub
-    val message: String
+    override val message: String
         get() = this.httpStatusCode
 
 }
