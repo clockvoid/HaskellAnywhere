@@ -5,3 +5,7 @@ java-json.jar
 .project
 .classpath
 .settings
+build
+out
+.idea
+.gradle
