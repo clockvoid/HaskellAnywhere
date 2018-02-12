@@ -1,32 +1,29 @@
 language: java
-
 matrix:
   include:
-    - os: linux
-      sudo: false
-      jdk: oraclejdk8
-      addons:
-        apt:
-          packages:
-            - oracle-java8-installer
-            - oracle-java8-set-default
-
-script: ./gradlew build test makeExecutableJar --info --stacktrace --console=plain --max-workers=1 --no-daemon -Dkotlin.compiler.execution.strategy=in-proces -Dkotlin.colors.enabled=false
-
+  - os: linux
+    sudo: false
+    jdk: oraclejdk8
+    addons:
+      apt:
+        packages:
+        - oracle-java8-installer
+        - oracle-java8-set-default
+script: "./gradlew build test makeExecutableJar --info --stacktrace --console=plain
+  --max-workers=1 --no-daemon -Dkotlin.compiler.execution.strategy=in-proces -Dkotlin.colors.enabled=false"
 deploy:
   provider: releases
   api_key:
-    secure: cNpnIYhS0TNG9HSDRxRmoatd0Ykt8dNpjdzv1tJL/f5cma3Vh969bPOQCJgVKe5swZ6gF6Wj3tnZfnbNQXWIkWwWTL574HfZ/w5Yvge70BgM+p5MZTQBQqkMLX4DKlaLRM9T/8sLhrpgAjN/XO4GvvrhVwbQwUeWAnjCHSJwCnSnWa1cZgdjN2iqZ7QfzdlzvuX4UCZ/wO16XvPz194iHsORQcBq2uoiYb9ikfuStp1EzQuozbvVMmowstiYiDftbt/VgX8oi/RX3AVqg3KYvbF9XowGRqconvjwVMZf/ivGH4xerFzLLy2bClbKLyPCqwE9qxbp8MxI+RgIpRVAQ7FmBHgfUs09Ht5IHEWpgyMeM3/X+YMeFtceOQ8UiTfBnpBeWUyGRKylDuS2IWPAjpc0Uh263SgFNfopzzYvg/FR2RYiVrn/jUifok/n/Hlb6IyR1thbx2unzLmk/ejWLVkiBPLMVMnY7nuI/KW8DVkM5lRKojNe+t6NsdJfHgJNR2MjT6gWMF3U+ZI4fO5ppQSI7s1Q2DMp+H5TVfoXgLy/KWJleO0tIxAysCJneCMQmfQY7R5pT1DbrCdcQ97zyTceQwS/E9JTchVuIzI1HGtIH3ivPxSa/1b+bn2cdtETcWfS8jE6BguNwwyTMygTHqlXp1RhOL0VGyJHgDi+jkY=
-  file: ./build/libs/childclock.jar
-  skip_cleanup: true
+    secure: pEMiJzgYrXFledzhd+2vfpRVrvLtaG2JQKJwPEfzWG+hJiR4rgANOGh8qZYohT3YuIbvF8Qm9G/vBKxdmXZZcwOfpnEqaS3teYEged3wVcF+bxyswhqvCmyuu1ybhOmPvKBQCS+xsP5IlVn3x8mAPAg3+PAReHJ98JMxaHs9RKR42rU9CRYApggZ8VE1DyfYoMDzKhcHSldU6E2Dw2r/+2Bb35gC3GQlErNDUND0mFEoNr3dLUi/dtJ1vJAdGAuLv4HN8wlItG/q3gQjgmdVRjH3YbByUNxCzhOd6TcXCKvoBGL6GY+g49fD+fQKfcLBsQBUSJIWVSnUUwsuCzAZQdS7RPHQpW5DCxkjUuEAa3REzBqUSUCfP8w6231uqo/jHsi5QdxIV/6/llNXUCUCbGTPweBsHcwv3ziIhBgg5VO3UaMvu4CYKLbMQxWm8+hK0lZb2OPVKoR4v2VAsvUXckBIEVV5zp58Q2qXUAjNh4MtviIf3p4dehzHiq/C1kOaYWKu2hiB5qwlGgnQ3B57hecCff7rE0mhtRdPCKettf21ththmz31PTe1VjbHnjMT7pmES2S/h8JBFKCAA2IdTQvg9bPqq/c1Ahfn09Zs2vQToGUZGs0rgy5Xzag2iB3RF5iq7L2UhP7xgEW3Ip6VorkUkLnzdw5zWwL7xvfb0U0=
+  file:
+    - "./build/libs/HaskellAnywhere.jar"
+    - "./build/libs/HaskellAnywhere-1.0-SNAPSHOT.jar"
   on:
-    tags: true
-
+    repo: clockvoid/HaskellAnywhere
 before_cache:
-  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
-
+- rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+- rm -fr $HOME/.gradle/caches/*/plugin-resolution/
 cache:
   directories:
-    - $HOME/.gradle/caches/
-    - $HOME/.gradle/wrapper/
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"

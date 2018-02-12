@@ -24,8 +24,9 @@ gradle build
 
 ```
 gradle makeExecutableJar
-gradle makeNonExecutableJar
+gradle jar
 ```
+このとき，`build/libs`にいくつかのJarができますが，`HaskellAnywhere.jar`という名前のJarがExecutableJarです．
 
 ## Environment
 開発はOracle jdk9.0（Kotlin 1.2.21）で行っております．

@@ -52,10 +52,3 @@ task makeExecutableJar(type: Jar, dependsOn: jar) {
     from "$buildDir/resources/main"
 }
 
-task makeNonExexutableJar(type: Jar, dependsOn: Jar) {
-    archiveName = "${archiveBaseName}.jar"
-    from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
-    from "$buildDir/classes/kotlin/main"
-    from "$buildDir/classes/java/main"
-    from "$buildDir/resources/main"
-}
