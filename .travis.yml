@@ -18,11 +18,15 @@ deploy:
   file:
     - "./build/libs/HaskellAnywhere.jar"
     - "./build/libs/HaskellAnywhere-1.0-SNAPSHOT.jar"
+  skip_cleanup: true
   on:
     repo: clockvoid/HaskellAnywhere
+    tags: true
+
 before_cache:
-- rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
-- rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
 cache:
   directories:
   - "$HOME/.gradle/caches/"
